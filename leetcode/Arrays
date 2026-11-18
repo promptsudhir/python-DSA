@@ -2,7 +2,6 @@
 nums = [3,4,5,6,7]
 target = 13
 
-
 def twoSum(nums , target):
     for i in range(len(nums)):
          for j in  range( i + 1, len(nums)):
@@ -10,14 +9,31 @@ def twoSum(nums , target):
                     return [ i , j ]
               
 #number of moves required to make all the elements equal
-    def minMoves(nums) :
-        largest = max(nums)
-        moves = 0
-        for num in nums:
-            moves = moves + largest - num
+
+def minMoves(nums) :
+    largest = max(nums)
+    moves = 0
+    for num in nums:
+        moves = moves + largest - num
 
 
-        return moves    
+    return moves    
         
-  
+# majority element 
+nums = [2,1,2,1,2,2,1,2,1]
+def solution(nums):
+    count = {}
+    for num in nums:
+        if num in count:
+             count[num] +=1
+        else: count[num] = 1
+ # by doing this we are creating a dict where we add the elements of num as key and we are using their frequencies as values
+
+# now we will iterate through the count dict which now has key n values to find the key with the most occurence
+    for counts in count:
+         if count[counts] > len(num)//2:
+          return count
+# 
+
+ 
 
