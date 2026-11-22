@@ -7,9 +7,10 @@ def twoSum(nums , target):
          for j in  range( i + 1, len(nums)):
              if nums[i] + nums[j] == target:
                     return [ i , j ]
-              
-#number of moves required to make all the elements equal
+             
+''''''              
 
+#number of moves required to make all the elements equal
 def minMoves(nums) :
     largest = max(nums)
     moves = 0
@@ -18,7 +19,9 @@ def minMoves(nums) :
 
 
     return moves    
-        
+
+''''''  
+
 # majority element 
 nums = [2,1,2,1,2,2,1,2,1]
 def solution(nums):
@@ -33,7 +36,27 @@ def solution(nums):
     for counts in count:
          if count[counts] > len(num)//2:
           return count
-# 
+
+''''''
+
+## search insertion position 
+# return the index of the target if found, if not, return the index it should be there
+
+nums =[1,3,5,6]
+target = 5
+
+def solution(nums,target):
+        dup_list = nums.copy()
+    
+        if target in nums:
+            return nums.index(target)
+        
+        dup_list.append(target)
+        dup_list.sort()
+        return dup_list.index(target)
+
+print(solution(nums,target))    
+
 
  
 
